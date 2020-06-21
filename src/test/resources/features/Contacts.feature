@@ -58,7 +58,7 @@ Feature: Contacts page
       | salesmanager101 | Peyton    | Harber   |
       | storemanager85  | Marcella  | Huels    |
 
-  @wip
+
   Scenario Outline: Default page number
     Given the user is on the login page
     And the user enter the driver information
@@ -69,6 +69,14 @@ Feature: Contacts page
     |1     |
     |2     |
     |3     |
+
+  @wip
+  Scenario: Contacts test with email
+    Given the user logged in as "store manager"
+    And the user navigates "Customers" "Contacts"
+    When the user clicks the "mbrackstone9@example.com" from contacts
+    Then the information should be same with database
+
 
 
 
