@@ -1,9 +1,6 @@
 package com.vytrack.step_definitions;
 
-import com.vytrack.pages.BasePage;
-import com.vytrack.pages.ContactsPage;
-import com.vytrack.pages.DashboardPage;
-import com.vytrack.pages.LoginPage;
+import com.vytrack.pages.*;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
@@ -86,7 +83,28 @@ public class ContactsStepDefs {
 
     @Then("the information should be same with database")
     public void the_information_should_be_same_with_database() {
-        BrowserUtils.waitFor(3);
+       //get actual data from UI-GUI-Front end-Browser-Website(whatever we see)
+        ContactInfoPage contactInfoPage = new ContactInfoPage();
+        String actualFullname = contactInfoPage.contactFullName.getText();
+        String actualEmail = contactInfoPage.email.getText();
+        String actualPhone = contactInfoPage.phone.getText();
+
+        System.out.println("actualFullname = " + actualFullname);
+        System.out.println("actualEmail = " + actualEmail);
+        System.out.println("actualPhone = " + actualPhone);
+
+
+        //get expected data from database
+
+
+
+
+       //Compare UI to DB
+
+
+
+
+
     }
 
 
